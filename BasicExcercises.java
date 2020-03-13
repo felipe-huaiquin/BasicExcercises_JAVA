@@ -39,7 +39,7 @@ public class BasicExcercises{
         return max;
     }
 
-    public returnAverage(int[] array){
+    public Integer returnAverage(int[] array){
         int avg = 0;
         int sum = 0;
 
@@ -62,7 +62,7 @@ public class BasicExcercises{
         return count;
     }
 
-    public Integer squareArray(int[] array){
+    public int[] squareArray(int[] array){
         int[] squaredArray = new int[array.length];
         int element_2 = 0;
         for(int i = 0; i < array.length; i++){
@@ -70,5 +70,52 @@ public class BasicExcercises{
             squaredArray[i] = element_2 ;
         }
         return squaredArray;
+    }
+
+    public int[] deleteNegatives(int[] array){
+        for(int i = 0; i < array.length; i++){
+            if(array[i]<0){
+                array[i] = 0;
+            }
+        }
+
+        return array;
+    }
+
+    public int[] maxMinAvg(int[] array){
+        int max = array[0];
+        int min = array[0];
+        int sum = 0;
+        int avg = 0;
+
+        
+
+        for(int i = 0; i < array.length; i++){
+            sum += array[i];
+            if(max < array[i]){
+                max = array[i];
+            }else{
+                min = array[i];
+            }
+        }
+
+        avg = (sum /array.length);
+    
+        int[] arrayMMA = {max,min,avg};
+
+        return arrayMMA;
+    }
+
+    public int[] changeValues(int[] array){
+        int[] arrayValues = new int[array.length];
+        for(int i = 0; i < array.length;i++){
+            if( (i+1) == array.length){
+                arrayValues[i]=0;
+            }else{
+                arrayValues[i] = array[i+1];
+            }
+        }
+        
+        return arrayValues;
     }
 }
